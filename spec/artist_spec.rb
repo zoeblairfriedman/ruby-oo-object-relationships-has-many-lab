@@ -47,7 +47,7 @@ describe "Artist" do
 
     describe ".song_count" do
       it "is a class method that returns the total number of songs associated to all existing artists" do
-        expect(Artist.song_count).to eq(3)
+        expect(Artist.song_count).to eq(4)
       end
     end
 end

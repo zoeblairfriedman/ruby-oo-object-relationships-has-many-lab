@@ -3,6 +3,7 @@ require "spec_helper"
 describe "Artist" do
 
   let!(:adele) { Artist.new("Adele") }
+  let!(:drake) { Artist.new("Drake")}
 
     describe "#new" do
       it "is initialized with a name" do
@@ -21,6 +22,8 @@ describe "Artist" do
         expect(adele.songs).to be_a(Array)
         hello = Song.new("Hello")
         hello.artist = adele
+        hotline_bling = Song.new("Hotline Bling")
+        hotline_bling.artist = drake
         expect(adele.songs).to eq([hello])
       end
     end
@@ -44,7 +47,7 @@ describe "Artist" do
 
     describe ".song_count" do
       it "is a class method that returns the total number of songs associated to all existing artists" do
-        expect(Artist.song_count).to eq(3)
+        expect(Artist.song_count).to eq(4)
       end
     end
 end
